@@ -1,0 +1,27 @@
+==Basic syntax==
+
+pair      (:)
+seperator (,)
+interval  (..)
+encapsulator (,,,), [,,,], {,,,}
+decapsulator ~(), ~[], ~{}
+comprehension (|,,,),[|,,,], {|,,,}
+block {||;;;;}
+binding   x := v
+iteration x <- list
+
+==List==
+
+List are values sperated by comma
+
+==Tuple==
+
+fix-sized list, encapsulated by (,,,)
+
+==Array==
+
+dynamic list, encapsulated by [,,,]
+
+==Map==
+
+dynamic pair list, encapsulated by {,,,}

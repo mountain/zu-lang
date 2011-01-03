@@ -1,0 +1,105 @@
+#!/usr/bin/zu
+# -*- coding: utf8 -*-
+
+###########################################################
+#
+# Bootstrap.zu
+#
+# enhencement of the low-level expression language
+#
+###########################################################
+
+#----------------------------------------------
+# Natives
+#----------------------------------------------
+
+native unary   # Function (Scope, Symbol, Integer, Block, Void)
+               # @ sideeffect parser;
+native mbinary # Function (Scope, Symbol, Integer, Block, Void)
+               # @ sideeffect parser;
+native lbinary # Function (Scope, Symbol, Integer, Block, Void)
+               # @ sideeffect parser;
+native rbinary # Function (Scope, Symbol, Integer, Block, Void)
+               # @ sideeffect parser;
+
+native def    # Function (Scope, Symbol, Block, Void) @ sideeffect;
+
+native nscp   #
+native escp   #
+
+native load   # Function (Scope, Symbol, Void) @ sideeffect;
+
+#----------------------------------------------
+# Function functions
+#----------------------------------------------
+
+def id {x|
+    return x;
+};
+
+def const {x|
+    return {*| return x};
+};
+
+def compose {f, g|
+    return {*|
+        return f (g *);
+    };
+};
+
+def composes {flist|
+    return {*|
+        return (first flist) ((composes (rest flist)) *);
+    };
+};
+
+#----------------------------------------------
+# List functions
+#----------------------------------------------
+
+def empty { values |
+    return ((values) = ());
+};
+
+#----------------------------------------------
+# List functions
+#----------------------------------------------
+
+def lempty { list |
+    return (list = []);
+}
+
+def lmap { fun, list |
+    return [{x| return fun x;} (list)];
+}
+
+#----------------------------------------------
+# Namespace and scope management
+#----------------------------------------------
+
+def pakages
+
+def namespace {
+    root: {},
+    cur : namespace.root,
+};
+
+def scopes    [{}];
+
+#----------------------------------------------
+# Meta functions
+#----------------------------------------------
+
+def module { name, exports |
+    namespace[name]
+};
+
+def import { name|
+
+};
+
+def operator { |
+
+};
+
+

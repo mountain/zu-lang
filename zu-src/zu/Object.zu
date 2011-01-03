@@ -1,0 +1,28 @@
+#!/usr/bin/zu
+# -*- coding: utf8 -*-
+
+###########################################################
+#
+# Object.zu
+#
+# Initialization for the high level language
+#
+###########################################################
+
+module "zu.Object" {
+
+import "Prelude";
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

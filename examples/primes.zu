@@ -1,0 +1,13 @@
+def sieveBy {p, xs|
+    return [x | x <- ~xs, x % p > 0];
+};
+
+def sieve {xs|hd, rst|
+    hd = head xs;
+    rst = rest xs;
+    return [hd] + (sieveBy hd rst);
+};
+
+def main {|
+    return break 100 (sieve [2..]);
+}

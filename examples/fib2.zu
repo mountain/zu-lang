@@ -1,0 +1,8 @@
+def fib {|x := 0, y := 1|
+    x, y := y, x + y;
+    yield x;
+};
+
+def main {|
+    break 100 [x | x <- fib ()];
+}
